@@ -17,7 +17,7 @@ public class GameOfLifeDemo {
         System.out.println("Input grid Cells (one per line):");
         String[][] grid = gridOfCells.inputGrid(size);
         System.out.println("Grid of cells entered by user:");
-        gridOfCells.displayGrid(grid, size);
+        gridOfCells.displayGrid(grid);
     }
 
 }

@@ -14,6 +14,4 @@ public class GameOfLifeDemoTest {
         gameOfLifeDemo.start();
         verify(gameOfLifeDemo, times(1)).start();
     }
-
-
 }
