@@ -12,10 +12,12 @@ public class GameOfLifeDemo {
 
     public void start() {
         GridOfCells gridOfCells = new GridOfCells();
+        System.out.println("Enter size of square grid (Enter 2 for 2 X 2):");
         int size = gridOfCells.getSizeOfGrid();
-        String[][] grid = gridOfCells.createGridMatrixOfAliveCells(size);
+        System.out.println("Input grid Cells (one per line):");
+        String[][] grid = gridOfCells.inputGrid(size);
+        System.out.println("Grid of cells entered by user:");
         gridOfCells.displayGrid(grid, size);
     }
-
 
 }

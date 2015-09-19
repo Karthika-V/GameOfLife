@@ -35,12 +35,14 @@ public class GridOfCellsTest {
     }
 
     @Test
-    public void shouldCreateASquareMatrixForGridWithTheSizeInputtedByUser() {
+    public void shouldTakeInputFromUserAsGrid() {
         GridOfCells gridOfCells = new GridOfCells();
-        gridOfCells.displayGrid(gridOfCells.createGridMatrixOfAliveCells(2),2);
+        String input = "x\nx\nx\nx";
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);
+        gridOfCells.displayGrid(gridOfCells.inputGrid(2), 2);
 
         assertEquals("[x][x]\n[x][x]\n", outContent.toString());
-
     }
 
 }

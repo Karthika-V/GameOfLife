@@ -4,20 +4,22 @@ import java.util.Scanner;
 //GridOfCells manages the grid
 public class GridOfCells {
 
+    private String stateOfCell;
+
     public int getSizeOfGrid() {
-        System.out.println("Enter size of square grid (Enter 2 for 2 X 2):");
         Scanner in = new Scanner(System.in);
         return Integer.parseInt(in.nextLine());
     }
 
-    public String[][] createGridMatrixOfAliveCells(int size) {
-        String[][] grid = new String[size][size];
+    public String[][] inputGrid(int size) {
+        Scanner in = new Scanner(System.in);
+        String[][] inputGrid = new String[size][size];
         for (int i = 0; i < size; i++) {
             for(int j=0; j<size;j++) {
-                grid[i][j] = "x";
+                inputGrid[i][j] = in.nextLine();
             }
         }
-        return grid;
+        return inputGrid;
     }
 
     public void displayGrid(String[][] grid, int size) {
