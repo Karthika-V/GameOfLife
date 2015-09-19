@@ -19,6 +19,7 @@ public class GameOfLifeDemo {
         System.out.println("Grid of cells entered by user:");
         gridOfCells.displayGrid(grid);
         String[][] outputGrid = gridOfCells.applyRulesToInputGrid(grid);
+        System.out.println("Output Grid of cells:");
         gridOfCells.displayGrid(outputGrid);
     }
 
