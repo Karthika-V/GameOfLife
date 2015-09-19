@@ -42,17 +42,24 @@ public class GridOfCells {
                 countOfAliveCells = Collections.frequency(adjacentCellsOfCell, "x");
                 if (grid[i][j].equals("x") && countOfAliveCells < 2) {
                     grid[i][j] = "-";
-                } else if (grid[i][j].equals("x") && countOfAliveCells > 3) {
+                    break;
+                }
+                if (grid[i][j].equals("x") && countOfAliveCells > 3) {
                     grid[i][j] = "-";
-                } else if (grid[i][j].equals("x") && (countOfAliveCells == 3 || countOfAliveCells == 2)) {
+                    break;
+                }
+                if (grid[i][j].equals("x") && (countOfAliveCells == 3 || countOfAliveCells == 2)) {
                     grid[i][j] = "x";
-                } else if (grid[i][j].equals("-") && (countOfAliveCells == 3)) {
+                    break;
+                }
+                if (grid[i][j].equals("-") && (countOfAliveCells == 3)) {
                     grid[i][j] = "x";
+                    break;
                 }
             }
         }
-            return grid;
-        }
+        return grid;
+    }
 
     public void displayGrid(String[][] grid) {
         for (int i = 0; i < grid.length; i++) {
