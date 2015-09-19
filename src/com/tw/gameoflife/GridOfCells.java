@@ -44,6 +44,8 @@ public class GridOfCells {
                     grid[i][j] = "-";
                 } else if (grid[i][j].equals("x") && countOfAliveCells > 3) {
                     grid[i][j] = "-";
+                } else if (grid[i][j].equals("x") && (countOfAliveCells == 3 || countOfAliveCells ==  2)) {
+                    grid[i][j] = "X";
                 }
             }
         }

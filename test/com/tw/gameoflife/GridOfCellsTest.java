@@ -94,4 +94,17 @@ public class GridOfCellsTest {
         assertEquals("[x][-][-]\n[-][-][-]\n[-][-][-]\n", outContent.toString());
     }
 
+    @Test
+    public void shouldHaveAliveCellIfItIsADeadCellAndCountOfAliveCellsIsEitherThreeOrTwo() {
+        GridOfCells gridOfCells = new GridOfCells();
+        String input = "-\nx\n-\n-\nx\n-\n-\nx\n-";
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);
+        String[][] inputGrid = gridOfCells.inputGrid(3);
+        String[][] outputGrid = gridOfCells.applyRulesToInputGrid(inputGrid);
+        gridOfCells.displayGrid(outputGrid);
+
+        assertEquals("[x][-][-]\n[-][-][-]\n[-][-][-]\n", outContent.toString());
+    }
+
 }
