@@ -31,14 +31,7 @@ public class GameOfLifeDemoTest {
         ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
 
-        assertEquals("2", gameOfLifeDemo.getSizeOfGrid());
-    }
-
-    @Test
-    public void shouldConvertGridSizeToInteger() {
-        GameOfLifeDemo gameOfLifeDemo = new GameOfLifeDemo();
-
-        assertEquals(2, gameOfLifeDemo.convertGridSizeToInteger("2"));
+        assertEquals(2, gameOfLifeDemo.getSizeOfGrid());
     }
 
     @Test
