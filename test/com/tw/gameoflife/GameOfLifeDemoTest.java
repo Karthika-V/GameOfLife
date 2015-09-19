@@ -34,5 +34,13 @@ public class GameOfLifeDemoTest {
         assertEquals("2", gameOfLifeDemo.getSizeOfGrid());
     }
 
+    @Test
+    public void shouldConvertGridSizeToInteger() {
+        GameOfLifeDemo gameOfLifeDemo = new GameOfLifeDemo();
+
+        assertEquals(2, gameOfLifeDemo.convertGridSizeToInteger("2"));
+
+    }
+
 
 }
