@@ -18,6 +18,8 @@ public class GameOfLifeDemo {
         String[][] grid = gridOfCells.inputGrid(size);
         System.out.println("Grid of cells entered by user:");
         gridOfCells.displayGrid(grid);
+        String[][] outputGrid = gridOfCells.applyRulesToInputGrid(grid);
+        gridOfCells.displayGrid(outputGrid);
     }
 
 }

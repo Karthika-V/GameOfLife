@@ -68,4 +68,17 @@ public class GridOfCellsTest {
         assertEquals("[1, 2, 3, 4, 6, 7, 8, 9]", adjacentCellsList.toString());
     }
 
+    @Test
+    public void shouldHaveDeadCellIfCountOfAliveCellsInAdjacentCellsAreLessThanTwo() {
+        GridOfCells gridOfCells = new GridOfCells();
+        String input = "x\n-\n-\n-";
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);
+        String[][] inputGrid = gridOfCells.inputGrid(2);
+        String[][] outputGrid = gridOfCells.applyRulesToInputGrid(inputGrid);
+        gridOfCells.displayGrid(outputGrid);
+
+        assertEquals("[-][-]\n[-][-]\n", outContent.toString());
+    }
+
 }
