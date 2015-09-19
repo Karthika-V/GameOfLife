@@ -35,13 +35,14 @@ public class GridOfCells {
 
     public String[][] applyRulesToInputGrid(String[][] grid) {
         ArrayList<String> adjacentCellsOfCell;
-        int countOfAliveCells =0;
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length; j++) {
+                int countOfAliveCells =0;
                 adjacentCellsOfCell = findAdjacentCellsOfCell(grid, i, j);
                 countOfAliveCells = Collections.frequency(adjacentCellsOfCell, "x");
-                System.out.println("Count Of Alive cells for " + i + j + ":" + countOfAliveCells);
-                if (grid[i][j] == "x" && countOfAliveCells < 2) {
+                if (grid[i][j].equals("x") && countOfAliveCells < 2) {
+                    grid[i][j] = "-";
+                } else if (grid[i][j].equals("x") && countOfAliveCells > 3) {
                     grid[i][j] = "-";
                 }
             }
