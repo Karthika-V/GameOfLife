@@ -91,7 +91,7 @@ public class GridOfCellsTest {
         String[][] outputGrid = gridOfCells.applyRulesToInputGrid(inputGrid);
         gridOfCells.displayGrid(outputGrid);
 
-        assertEquals("[x][-][-]\n[-][-][-]\n[-][-][-]\n", outContent.toString());
+        assertEquals("[-][-][-]\n[-][-][-]\n[-][-][-]\n", outContent.toString());
     }
 
     @Test
@@ -104,7 +104,7 @@ public class GridOfCellsTest {
         String[][] outputGrid = gridOfCells.applyRulesToInputGrid(inputGrid);
         gridOfCells.displayGrid(outputGrid);
 
-        assertEquals("[x][-][-]\n[-][-][-]\n[-][-][-]\n", outContent.toString());
+        assertEquals("[-][x][-]\n[-][-][-]\n[-][-][-]\n", outContent.toString());
     }
 
 }
