@@ -1,46 +1,18 @@
 package com.tw.gameoflife;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
-import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 public class GameOfLifeDemoTest {
 
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-
-    @Before
-    public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
-    }
-
-    @After
-    public void cleanUpStreams() {
-        System.setOut(null);
-    }
-
     @Test
-    public void shouldGetTheGridSizeFromTheUserForGameOfLife() {
-        GameOfLifeDemo gameOfLifeDemo = new GameOfLifeDemo();
-        String input = "2";
-        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inContent);
-
-        assertEquals(2, gameOfLifeDemo.getSizeOfGrid());
-    }
-
-    @Test
-    public void shouldCreateASquareMatrixForGridWithTheSizeInputtedByUser() {
-        GameOfLifeDemo gameOfLifeDemo = new GameOfLifeDemo();
-        gameOfLifeDemo.displayGrid(gameOfLifeDemo.createGridMatrixOfAliveCells(2),2);
-
-        assertEquals("[x][x]\n[x][x]\n", outContent.toString());
-
+    public void shouldStartGameOfLife() {
+        GameOfLifeDemo gameOfLifeDemo = mock(GameOfLifeDemo.class);
+        gameOfLifeDemo.start();
+        verify(gameOfLifeDemo, times(1)).start();
     }
 
 

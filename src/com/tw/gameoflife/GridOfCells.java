@@ -1,7 +1,7 @@
 package com.tw.gameoflife;
 
 import java.util.Scanner;
-
+//GridOfCells manages the grid
 public class GridOfCells {
 
     public int getSizeOfGrid() {
