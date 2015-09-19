@@ -39,6 +39,14 @@ public class GameOfLifeDemoTest {
         GameOfLifeDemo gameOfLifeDemo = new GameOfLifeDemo();
 
         assertEquals(2, gameOfLifeDemo.convertGridSizeToInteger("2"));
+    }
+
+    @Test
+    public void shouldCreateASquareMatrixForGridWithTheSizeInputtedByUser() {
+        GameOfLifeDemo gameOfLifeDemo = new GameOfLifeDemo();
+        gameOfLifeDemo.displayGrid(gameOfLifeDemo.createGridMatrixOfAliveCells(2),2);
+
+        assertEquals("[x][x]\n[x][x]\n", outContent.toString());
 
     }
 
